@@ -1,16 +1,1 @@
-[
-  {
-    "username": "admin",
-    "password": "admin",
-    "id": 1,
-    "courses": [
-      {
-        "code": "SODV",
-        "num": "1101",
-        "name": "Programming Fundamentals",
-        "credits": "3",
-        "description": "Computer programming is central to software development. Learners analyze basic software and technology problems and develop a good programming style and logical thinking to write structured instruction that addresses those problems. Learners demonstrate their structured coding skills by writing correct code with clarity and quality. They use extensively the structured control flow, repetition, block structure, and subroutines in this course."
-      }
-    ]
-  }
-]
+[{"username":"admin","password":"admin","id":1,"courses":[{"code":"DESN","num":"2301","name":"User Experience Design","credits":"3","description":"This course introduces the principles of designing the user experience. These principles as well as design thinking are applied in the construction of effective solutions to business scenarios. Learners take a multi-disciplinary approach to integrating skills, concepts, and performance criteria within production teams. The course covers marketing content, layouts, usability testing, and visual theory, as well as introduces designing for emerging technologies."},{"code":"MATH","num":"1901","name":"Math for the Computer Industry","credits":"3","description":"This course provides learners with the practical knowledge and skills in the use of mathematics in relation to computers. Alternate number bases, set theory, logic, and Boolean algebra are the foundation of this course. In addition, learners use basic statistical concepts to understand challenges in information technology."},{"code":"SODV","num":"1101","name":"Programming Fundamentals","credits":"3","description":"Computer programming is central to software development. Learners analyze basic software and technology problems and develop a good programming style and logical thinking to write structured instruction that addresses those problems. Learners demonstrate their structured coding skills by writing correct code with clarity and quality. They use extensively the structured control flow, repetition, block structure, and subroutines in this course."}]},{"username":"admin2","password":"admin","id":2,"courses":[]},{"username":"admin3","password":"admin","id":3,"courses":[]}]

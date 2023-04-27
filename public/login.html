@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="/style.css">
+    <script>
+        window.onload = function() {
+            const loginForm = document.querySelector('form');
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.querySelector('#username').value;
+                const password = document.querySelector('#password').value;
+                const data = {
+                    username,
+                    password
+                };
+                fetch('/users/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        let userId = data.userId;
+                        if(userId) {
+                            localStorage.setItem('userId', userId);
+                            localStorage.setItem('isAuthenticated', true);
+                        }
+                        window.location.href = '/';
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    <a href="/signup.html"><button>Create an account</button></a>
+</body>
+</html>

@@ -48,11 +48,11 @@ The project is split into two sections: the backend ExpressJS API server and the
 
 #### patch /account/:id/courses/add
 
-- body: course object
-- if course object doesn't exist or doesn’t have code, title, and description, respond with error message
-- if id doesn’t match a user, respond with error message
-- if course was already in users course list, respond with error message
-- otherwise add it, respond with updated course list
+- 1 body: course object
+- 2 if course object doesn't exist or doesn’t have code, title, and description, respond with error message
+- 3 if id doesn’t match a user, respond with error message
+- 4 if course was already in users course list, respond with error message
+- 5 otherwise add it, respond with updated course list
 
 #### patch /account/:id/courses/remove
 

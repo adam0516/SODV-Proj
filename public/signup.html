@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/style.css">
+
+    <title>Sign Up</title>
+    <script>
+        window.onload = function() {
+            const loginForm = document.querySelector('form');
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if(document.querySelector('#password').value !== document.querySelector('#cpassword').value) {
+                    alert('Passwords do not match');
+                    return;
+                }
+                const username = document.querySelector('#username').value;
+                const password = document.querySelector('#password').value;
+                const data = {
+                    username,
+                    password
+                };
+                fetch('/users/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(res => res.json()).then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        let userId = data.userId;
+                        if(userId) {
+                            localStorage.setItem('userId', userId);
+                            localStorage.setItem('isAuthenticated', true);
+                        }
+                        window.location.href = '/';
+                    }
+                }).catch(err => {
+                    console.log(err);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action="" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <label for="password">Confirm</label>
+        <input type="password" name="cpassword" id="cpassword" placeholder="Password">
+        <button type="submit">Sign Up</button>
+    </form>
+    <a href="/login.html"><button>Login</button></a>
+</body>
+</html>

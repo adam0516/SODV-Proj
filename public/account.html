@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="account.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <div id="hleft">
+            <button id="back-button">&lt;</button>
+            <h3>Account</h3>
+        </div>
+        <div id="hcenter">
+        </div>
+        <div id="hright">
+            <div class="login-state">
+                <div id="logged-in-div" style="display: none;">
+                    <div id="logged-in-user" class="collapsed">
+                        <span class="material-symbols-outlined" onclick="
+                            document.getElementById('logged-in-user').classList.toggle('collapsed');
+                            document.getElementById('account-options').classList.toggle('collapsed');
+                            ">
+                            account_circle
+                        </span>
+                        <div id="account-options" class="collapsed">
+                            <button id="account-button">
+                                account
+                            </button>
+                            <button id="logout-button">
+                                log out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="logged-out-div">
+                    <button id="login-button">Login</button>
+                    <button id="signup-button">Sign Up</button>
+                </div>
+        </div>
+    </header>
+    <div id="courses">
+    </div>
+</body>
+</html>
